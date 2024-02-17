@@ -39,6 +39,20 @@ def signup (request):
 
     return render (request , 'signup.html')
 
+def login (request):
 
+    if request.method == 'POST':
+        get_email = request.POST.get('email')
+        get_password = request.POST.get('password')
+        my_user = authenticate (username = get_email , password = get_password)
+
+        if my_user is not None:
+            login (request , my_user)
+            messages.success (request , 'Login Success')
+            return redirect ('home')
+        else:
+            messages.error (request , 'Invalid Credentials')
+
+    return render (request , 'login.html')
 
 
