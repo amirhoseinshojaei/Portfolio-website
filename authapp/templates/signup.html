@@ -20,7 +20,7 @@
   {% endfor %}
         <div class="card p-2">
   
-        <form action="/auth/signup/" method="post">{% csrf_token %}
+        <form action="{% url 'signup' %}" method="post">{% csrf_token %}
           <div class="form-group">
             <h5>
               <span><i class="bx bx-envelope"></i> Email</span>
@@ -46,7 +46,7 @@
             <button class="btn btn-dark" type="submit">SignUp</button>
           </div>
             <br>
-        Already User ? <a href="/auth/login/">Login</a>
+        Already User ? <a href="{% url 'logout' %}">Login</a>
         </div>
         
         </form>
