@@ -23,6 +23,7 @@ urlpatterns = [
     path ("",include('portfolio.urls')),
     path ('authentication/',include('authapp.urls')),
     path ('blogs/',include ('blog.urls')),
+    path ('contact/',include ('contact.urls')),
 ]
 
 urlpatterns += static (settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)
