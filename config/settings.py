@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'services.apps.ServicesConfig',
     'team.apps.TeamConfig',
+    'internshipdetails',
 ]
 
 MIDDLEWARE = [
