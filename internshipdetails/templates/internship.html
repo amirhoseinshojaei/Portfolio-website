@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Internship{% endblock title %}
+{% block content %}
+{% for message in messages %}
+
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+  <strong>{{message}} </strong> 
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+<form action="{% url 'internship' %}" method="post">{% csrf_token %}
+    <div class="form-group">
+        <h5>
+          <span><i class="fas fa-user"></i> Full Name</span>
+        </h5>
+        <input type="text" class="form-control mb-3" name="name" required/>
+    </div>
+      <div class="form-group">
+        <h5>
+          <span><i class="bx bx-envelope"></i> Email</span>
+        </h5>
+        <input type="email" value="{{user.email}}" class="form-control mb-3" name="email" required/>
+      </div>
+      <div class="form-group">
+        <h5>
+          <span><i class="fas fa-user"></i> College Name</span>
+        </h5>
+        <input type="text" class="form-control mb-3" name="College Name" required/>
+      </div>
+      <div class="form-group">
+        <h5>
+          <span><i class="fas fa-user"></i>Nationality</span>
+        </h5>
+        <input type="text" class="form-control mb-3" name="Nationality" required/>
+    </div>
+
+    <div class="form-group">
+        <h5>
+          <span><i class="fas fa-user"></i>start date</span>
+        </h5>
+        <input type="text" class="form-control mb-3" name="Start date" required/>
+    </div>
+    <div class="form-group">
+        <h5>
+          <span><i class="fas fa-user"></i>End date</span>
+        </h5>
+        <input type="text" class="form-control mb-3" name="End date" required/>
+    </div>
+    <div class="form-group">
+        <h5>
+          <span><i class="fas fa-user"></i>Project report</span>
+        </h5>
+        <input type="text" class="form-control mb-3" name="Project report" required/>
+    </div>
+    <div class="form-group">
+        <h5>
+          <span><i class="fas fa-user"></i>Timestamp</span>
+        </h5>
+        <input type="text" class="form-control mb-3" name="Timestamp" required/>
+    </div>
+
+      
+</form>
+{% endblock content %}
