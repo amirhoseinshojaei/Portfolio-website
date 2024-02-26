@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{posts.title}}{% endblock title %}
+{% block content %}
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+    <div class="icon-box">
+      <div class="icon"><i class="bx bx-slideshow"></i></div>
+      <h4>{{posts.title}}</h4>
+      <p>{{posts.description}}</p>
+      <hr>
+      <img src="{{posts.image.url}}" alt="">
+{% endblock content %}
