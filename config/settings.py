@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
     'services.apps.ServicesConfig',
-    'team.apps.TeamConfig',
+    
     'internshipdetails',
 ]
 
